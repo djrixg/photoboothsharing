@@ -1,6 +1,4 @@
 (function(){
-
-	// Constructor method
 	this.CsvToTable = function(){
 		this.csvFile = null;
     	if (arguments[0] && typeof arguments[0] === "object") {
@@ -80,10 +78,10 @@
 	                } else {
 	                    table += '<td>';
 	                    if(rowCell==3){
-	                    	table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
+	                    	table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
   	                  }
 	                    else if(rowCell==2){
-	                    	table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'<br><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
+	                    	table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'<br><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
   	                  }else{
   	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
   	                  }
