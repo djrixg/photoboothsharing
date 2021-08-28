@@ -75,11 +75,11 @@
 	            	if(rowCells[rowCell]!=""){
 	                if(singleRow === 0){
 	                    table += '<th>';
-	                    table += rowCells[rowCell].replace('"', '');
+	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
 	                    table += '</th>';
 	                } else {
 	                    table += '<td>';
-	                    table += rowCells[rowCell].replace('"', '');
+	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
 	                    table += '</td>';
 	                }
 	              }
