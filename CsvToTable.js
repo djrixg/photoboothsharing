@@ -72,6 +72,7 @@
 	            }
 	            var rowCells = allRows[singleRow].split(',');
 	            for(var rowCell = 0; rowCell < rowCells.length; rowCell++){
+	            	if(rowCells[rowCell]!=""){
 	                if(singleRow === 0){
 	                    table += '<th>';
 	                    table += rowCells[rowCell].replace('"', '');
@@ -81,6 +82,7 @@
 	                    table += rowCells[rowCell].replace('"', '');
 	                    table += '</td>';
 	                }
+	              }
 	            }
 	            if (singleRow === 0) {
 	                table += '</tr>';
