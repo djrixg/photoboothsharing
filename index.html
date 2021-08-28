@@ -6,6 +6,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
 	<script src="CsvToTable.js"></script>
 </head>
 <body>
@@ -13,9 +14,18 @@
 		<table class="table table-striped table_links"></table>
 	</div>
 <script type="text/javascript">
+	// // alert(Cookies.get('link'));
+	// // Cookies.set('name', 'value')
+	// // Cookies.remove('name')
+	// Cookies.set('link', '1111');
+	// // if(Cookies.get('link')!=null){
+	// alert(Cookies.get('link'));
+	// // }else{
+	// // 	alert("WALA");
+	// // }
 	var csvtotable = new CsvToTable({
-    	csvFile: prompt("Insert Link:")
-    	// csvFile: 'https://docs.google.com/spreadsheets/d/1loEeVjZx9_3y4TLIAVIMEcUofzEeDXPAKdquknXs2A4/gviz/tq?tqx=out:csv&sheet=Sheet1'
+    	// csvFile: prompt("Insert Link:")
+    	csvFile: 'https://docs.google.com/spreadsheets/d/1loEeVjZx9_3y4TLIAVIMEcUofzEeDXPAKdquknXs2A4/gviz/tq?tqx=out:csv&sheet=Sheet1'
 	});
 	csvtotable.run();
 </script>
