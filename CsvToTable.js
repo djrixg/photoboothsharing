@@ -79,10 +79,13 @@
 	                    table += '</th>';
 	                } else {
 	                    table += '<td>';
-	                    if(rowCell!=3){
-  	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
+	                    if(rowCell==3){
+	                    	table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
+  	                  }
+	                    else if(rowCell==2){
+	                    	table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'<br><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
   	                  }else{
-  	                    table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
+  	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
   	                  }
 	                    table += '</td>';
 	                }
