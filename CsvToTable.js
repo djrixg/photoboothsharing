@@ -3,18 +3,14 @@
 	// Constructor method
 	this.CsvToTable = function(){
 		this.csvFile = null;
-
-		// Create options by extending defaults with the passed in arugments
     	if (arguments[0] && typeof arguments[0] === "object") {
       		this.options = arguments[0];
     	}
 
 	}
-
 	CsvToTable.prototype.run = function() {
 		return buildTable.call(this);
 	}
-
 	function getCSV() {
 		try{
 			var csvfile = this.options.csvFile;
@@ -65,6 +61,7 @@
 	function buildTable() {
 		getCSV.call(this).then(function(response){
 			var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
+			console.log(allRows);
 	        var table = '<table>';
 	        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
 	            if (singleRow === 0) {
