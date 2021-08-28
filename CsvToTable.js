@@ -74,11 +74,11 @@
 	            for(var rowCell = 0; rowCell < rowCells.length; rowCell++){
 	                if(singleRow === 0){
 	                    table += '<th>';
-	                    table += rowCells[rowCell];
+	                    table += rowCells[rowCell].replace('"', '');
 	                    table += '</th>';
 	                } else {
 	                    table += '<td>';
-	                    table += rowCells[rowCell];
+	                    table += rowCells[rowCell].replace('"', '');
 	                    table += '</td>';
 	                }
 	            }
