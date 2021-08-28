@@ -79,7 +79,11 @@
 	                    table += '</th>';
 	                } else {
 	                    table += '<td>';
-	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
+	                    if(rowCell!=3){
+  	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
+  	                  }else{
+  	                    table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="100">';
+  	                  }
 	                    table += '</td>';
 	                }
 	              }
