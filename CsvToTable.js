@@ -62,7 +62,7 @@
 		getCSV.call(this).then(function(response){
 			var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
 			console.log(allRows);
-	        var table = '<table>';
+	        var table = '';
 	        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
 	            if (singleRow === 0) {
 	                table += '<thead>';
@@ -91,9 +91,8 @@
 	            }
 	        }
 	        table += '</tbody>';
-	        table += '</table>';
-
-	        document.body.innerHTML += table;
+	        $("#table_links").html("Hello World");
+	        // document.body.innerHTML += table;
 		}, function(error){
 			console.error(error);
 		});
