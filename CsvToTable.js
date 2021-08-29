@@ -62,7 +62,7 @@
 			var gallery = '';
 			for(var singleRow = 1;singleRow<allRows.length;singleRow++){
 				var photo = allRows[singleRow].split(',');
-				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+photo[0].substring(1,photo[0].length-1)+'">'+photo[1].substring(1,photo[1].length-1)+'</button>';
+				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+photo[0].replace('"','')+'">'+photo[1].replace('"','')+'</button>';
 			}
 			$(".table_links").html(gallery);
 			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
