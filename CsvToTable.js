@@ -59,47 +59,53 @@
 	function buildTable() {
 		getCSV.call(this).then(function(response){
 			var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
-			console.log(allRows);
-	        var table = '';
-	        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-	            if (singleRow === 0) {
-	                table += '<thead>';
-	                table += '<tr>';
-	            } else {
-	                table += '<tr>';
-	            }
-	            var rowCells = allRows[singleRow].split(',');
-	            for(var rowCell = 0; rowCell < rowCells.length; rowCell++){
-	            	if(rowCells[rowCell]!=""){
-	                if(singleRow === 0){
-	                    table += '<th>';
-	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
-	                    table += '</th>';
-	                } else {
-	                    table += '<td>';
-	                    if(rowCell==3){
-	                    	table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
-  	                  }
-	                    else if(rowCell==2){
-	                    	table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'<br><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
-  	                  }else{
-  	                    table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
-  	                  }
-	                    table += '</td>';
-	                }
-	              }
-	            }
-	            if (singleRow === 0) {
-	                table += '</tr>';
-	                table += '</thead>';
-	                table += '<tbody>';
-	            } else {
-	                table += '</tr>';
-	            }
-	        }
-	        table += '</tbody>';
-	        $(".table_links").html(table);
-	        // document.body.innerHTML += table;
+			var gallery = '';
+			for(var singleRow = 0;singleRow<allRows.length;singleRow++){
+				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+singleRow[0]+'">'+singleRow[1]+'</button>';
+			}
+			$(".table_links").html(gallery);
+			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
+			// console.log(allRows);
+	  //       var table = '';
+	  //       for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+	  //           if (singleRow === 0) {
+	  //               table += '<thead>';
+	  //               table += '<tr>';
+	  //           } else {
+	  //               table += '<tr>';
+	  //           }
+	  //           var rowCells = allRows[singleRow].split(',');
+	  //           for(var rowCell = 0; rowCell < rowCells.length; rowCell++){
+	  //           	if(rowCells[rowCell]!=""){
+	  //               if(singleRow === 0){
+	  //                   table += '<th>';
+	  //                   table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
+	  //                   table += '</th>';
+	  //               } else {
+	  //                   table += '<td>';
+	  //                   if(rowCell==3){
+	  //                   	table += '<img src="'+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
+  	//                   }
+	  //                   else if(rowCell==2){
+	  //                   	table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'<br><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+rowCells[rowCell].substring(1, rowCells[rowCell].length-1)+'" alt="" width="250">';
+  	//                   }else{
+  	//                     table += rowCells[rowCell].substring(1, rowCells[rowCell].length-1);
+  	//                   }
+	  //                   table += '</td>';
+	  //               }
+	  //             }
+	  //           }
+	  //           if (singleRow === 0) {
+	  //               table += '</tr>';
+	  //               table += '</thead>';
+	  //               table += '<tbody>';
+	  //           } else {
+	  //               table += '</tr>';
+	  //           }
+	  //       }
+	  //       table += '</tbody>';
+	  //       $(".table_links").html(table);
+	  //       // document.body.innerHTML += table;
 		}, function(error){
 			console.error(error);
 		});
