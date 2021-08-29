@@ -63,8 +63,8 @@
 			for(var singleRow = 1;singleRow<allRows.length;singleRow++){
 				var photo = allRows[singleRow].split(',');
 				// gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+photo[0].replace('"','').replace('"','')+'">'+photo[1].replace('"','').replace('"','')+'</button>';
-				var file_id = photo[2].replace('"','').replace('"','').split("/")[5];
-				gallery+='<img class="btn" onclick="openPhoto("'+file_id+'")" src="'+photo[3].replace('"','').replace('"','')+'"/>';
+				var file_id = photo[2].replace('"','').replace('"','').split("/")[5].replace(' ','');
+				gallery+='<img class="btn" onclick="openPhoto('/'+file_id+'/')" src="'+photo[3].replace('"','').replace('"','')+'"/>';
 			}
 			$(".table_links").html(gallery);
 			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
