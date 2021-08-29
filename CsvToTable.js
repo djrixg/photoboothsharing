@@ -63,6 +63,7 @@
 			for(var singleRow = 1;singleRow<allRows.length;singleRow++){
 				var photo = allRows[singleRow].split(',');
 				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+photo[0].replace('"','')+'">'+photo[1].replace('"','')+'</button>';
+				gallery+='<img class="btn" onclick="openPhoto()" src="'+photo[3].replace('"','')+'"/>';
 			}
 			$(".table_links").html(gallery);
 			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
