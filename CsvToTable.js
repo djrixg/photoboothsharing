@@ -61,7 +61,8 @@
 			var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
 			var gallery = '';
 			for(var singleRow = 0;singleRow<allRows.length;singleRow++){
-				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+allRows[singleRow]+'">'+allRows[singleRow]+'</button>';
+				gallery+=JSON.stringify(allRows[singleRow]);
+				// gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+allRows[singleRow]+'">'+allRows[singleRow]+'</button>';
 			}
 			$(".table_links").html(gallery);
 			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
