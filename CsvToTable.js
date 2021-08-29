@@ -60,9 +60,11 @@
 		getCSV.call(this).then(function(response){
 			var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
 			var gallery = '';
-			for(var singleRow = 0;singleRow<allRows.length;singleRow++){
-				gallery+=JSON.stringify(allRows[singleRow])+"<br><br>";
-				// gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+allRows[singleRow]+'">'+allRows[singleRow]+'</button>';
+			for(var singleRow = 1;singleRow<allRows.length;singleRow++){
+				var photo = allRows[singleRow].split(',');
+
+				// gallery+=JSON.stringify(allRows[singleRow])+"<br><br>";
+				gallery+='<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal'+photo[0]+'">'+photo[1]+'</button>';
 			}
 			$(".table_links").html(gallery);
 			// var allRows = response.split(/\r?\n|\r/).filter(isNotEmpty);
