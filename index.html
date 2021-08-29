@@ -31,12 +31,13 @@
 	});
 	csvtotable.run();
 	function openPhoto(file_id){
-		alert(file_id);
+		// alert(file_id);
+		$('#qrmodal').modal('show');
 		// $(".iframe_preview").attr("src",'https://drive.google.com/file/d/'+file_id+'/preview');
 		// alert('https://drive.google.com/file/d/'+file_id+'/preview');
 	}
 </script>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="qrmodal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
